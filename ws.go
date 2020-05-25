@@ -12,6 +12,9 @@ type Manager interface {
 	// unregister connection
 	Unregister(conn *Connection)
 
+	//获取总的在线人数
+	GetOnLine() int
+
 	// broadcast message
 	Broadcast(message []byte, ignore *Connection)
 
@@ -27,6 +30,7 @@ func New() Manager {
 		unregister: make(chan *Connection),
 	}
 }
+
 
 
 // NewConnection return Connection

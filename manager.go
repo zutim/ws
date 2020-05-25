@@ -42,3 +42,7 @@ func (manager *manager) Broadcast(message []byte, ignore *Connection) {
 		}
 	}
 }
+
+func (manager *manager)GetOnLine() int{
+	return len(manager.connections)
+}
